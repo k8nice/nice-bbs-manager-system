@@ -13,6 +13,11 @@ import java.util.Date;
 public class BbsSysUser implements Serializable {
 
     /**
+     * 序列化id
+     */
+    private static final long serialVersionUID = -2417052614066129731L;
+
+    /**
      * bbs系统用户id
      */
     private Long bbsSysUserId;
@@ -21,6 +26,16 @@ public class BbsSysUser implements Serializable {
      * bbs系统用户名
      */
     private String bbsSysUserName;
+
+    /**
+     * bbs系统用户真实姓名
+     */
+    private String bbsSysUserRealName;
+
+    /**
+     * bbs系统用户联系方式
+     */
+    private String bbsSysUserMobile;
 
     /**
      * bbs系统用户创建时间
