@@ -42,12 +42,14 @@
             <version>1.4.0</version>
         </dependency>
 
+        <!-- 引入dao -->
         <dependency>
             <groupId>com.nice</groupId>
             <artifactId>nice-bbs-manager-system-dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!--  工具类 -->
         <dependency>
             <groupId>com.nice</groupId>
             <artifactId>nice-bbs-manager-system-common</artifactId>
@@ -62,6 +64,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
+                    <!-- jdk版本 -->
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>

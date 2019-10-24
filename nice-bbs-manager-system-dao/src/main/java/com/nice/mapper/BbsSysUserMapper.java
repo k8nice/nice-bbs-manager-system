@@ -11,11 +11,11 @@ import org.apache.ibatis.annotations.Param;
 public interface BbsSysUserMapper {
 
     /**
-     * 根据用户名和密码获取密码
+     * 根据用户名获取密码和盐值
      * @param bbsUserName
      * @return
      */
-    BbsSysUser queryBbsSysUserPasswordByBbsSysUserNameAndBbsSysUserPassword(@Param("bbsSysUserName")String bbsUserName);
+    BbsSysUser queryBbsSysUserPasswordAndSaltByBbsSysUserName(@Param("bbsSysUserName")String bbsUserName);
 
     /**
      * 根据bbs系统用户名或者bbs的系统用户id

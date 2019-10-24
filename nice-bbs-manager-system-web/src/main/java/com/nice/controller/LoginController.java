@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 /**
+ * 登录控制类
  * @author ningh
  */
 @Controller
@@ -37,6 +38,7 @@ public class LoginController {
         if (loginService.loginUser(bbsUserName,bbsUserPassword)){
             BbsSysUser bbsSysUser = new BbsSysUser();
             bbsSysUser.setBbsSysUserName(bbsUserName);
+            //把已登录的用户信息添加到session
             request.getSession().setAttribute("USER",bbsSysUser);
             return "html/main";
         }

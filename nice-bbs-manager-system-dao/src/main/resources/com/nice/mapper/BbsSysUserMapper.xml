@@ -13,8 +13,8 @@
         <result column="bbs_sys_user_modify_date" property="bbsSysUserModifyDate" />
         <result column="salt" property="salt" />
     </resultMap>
-
-    <select id="queryBbsSysUserPasswordByBbsSysUserNameAndBbsSysUserPassword" resultType="com.nice.domain.BbsSysUser" resultMap="bbsSysUser">
+    <!-- 通过用户名获取密码和盐值 -->
+    <select id="queryBbsSysUserPasswordAndSaltByBbsSysUserName" resultType="com.nice.domain.BbsSysUser" resultMap="bbsSysUser">
         select bbs_sys_user_password , salt  from bbs_sys_user where bbs_sys_user_name = #{bbsSysUserName};
     </select>
 </mapper>
