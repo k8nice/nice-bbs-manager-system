@@ -26,6 +26,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
+    /**
+     * 处理请求异常
+     * @param request 请求
+     * @param e 异常对象
+     * @param response 响应
+     * @return
+     */
     @ExceptionHandler(CustomException.class)
     public ErrorResponseEntiry customExceptionHandler(HttpServletRequest request, final Exception e, HttpServletResponse response){
         response.setStatus(HttpStatus.BAD_REQUEST.value());
@@ -33,6 +40,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ErrorResponseEntiry(exception.getCode(),exception.getMessage());
     }
 
+    /**
+     * 处理运行时异常
+     * @param request 请求
+     * @param e 异常对象
+     * @param response  响应
+     * @return
+     */
     @ExceptionHandler(RuntimeException.class)
     public ErrorResponseEntiry runtimeExceptionHandler(HttpServletRequest request, final Exception e, HttpServletResponse response){
         response.setStatus(HttpStatus.BAD_REQUEST.value());

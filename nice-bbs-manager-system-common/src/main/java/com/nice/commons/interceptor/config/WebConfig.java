@@ -16,7 +16,7 @@ import java.util.List;
  * @author ningh
  */
 @Configuration
-public class CharsetConfig extends WebMvcConfigurationSupport {
+public class WebConfig extends WebMvcConfigurationSupport {
 
     @Bean
     public HttpMessageConverter<String>  responseBodyConverter(){

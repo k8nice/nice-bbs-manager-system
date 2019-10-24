@@ -12,8 +12,8 @@ public interface BbsSysUserMapper {
 
     /**
      * 根据用户名获取密码和盐值
-     * @param bbsUserName
-     * @return
+     * @param bbsUserName   bbs用户名
+     * @return  bbsSysUser  bbs系统用户对象
      */
     BbsSysUser queryBbsSysUserPasswordAndSaltByBbsSysUserName(@Param("bbsSysUserName")String bbsUserName);
 
