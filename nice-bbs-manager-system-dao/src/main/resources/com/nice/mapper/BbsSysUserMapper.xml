@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nice.mapper.BbsSysUserMapper">
+
+    <resultMap id="bbsSysUser" type="com.nice.domain.BbsSysUser">
+        <id column="bbs_sys_user_id" property="bbsSysUserId" />
+        <result column="bbs_sys_user_name" property="bbsSysUserName" />
+        <result column="bbs_sys_user_password" property="bbsSysUserPassword" />
+        <result column="bbs_sys_user_real_name" property="bbsSysUserRealName" />
+        <result column="bbs_sys_user_mobile" property="bbsSysUserMobile" />
+        <result column="bbs_sys_user_create_date" property="bbsSysUserCreateDate" />
+        <result column="bbs_sys_user_modify_date" property="bbsSysUserModifyDate" />
+        <result column="salt" property="salt" />
+    </resultMap>
+
+    <select id="queryBbsSysUserPasswordByBbsSysUserNameAndBbsSysUserPassword" resultType="com.nice.domain.BbsSysUser" resultMap="bbsSysUser">
+        select bbs_sys_user_password , salt  from bbs_sys_user where bbs_sys_user_name = #{bbsSysUserName};
+    </select>
+</mapper>

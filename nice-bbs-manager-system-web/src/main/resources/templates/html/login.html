@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录用户</title>
+    <style type="text/css" rel="stylesheet">
+        body{
+            background-color: aqua;
+        }
+        #login-box{
+            border: 1px solid;
+            width: 500px;
+            height: 450px;
+            margin-left: 80px;
+            margin-top: 25px;
+            padding-top: 60px;
+            padding-left: 40px;
+        }
+        .login-text-input{
+            width: 240px;
+            height: 30px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>nice后台管理系统</h1>
+    <div id="login-box" >
+        <form method="post" action="/login/sys/user/check">
+            <input value="账号" type="text" class="login-text-input" name="username"><br/>
+            <input value="密码" type="text" class="login-text-input" name="password"><br/>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+</body>
+</html>

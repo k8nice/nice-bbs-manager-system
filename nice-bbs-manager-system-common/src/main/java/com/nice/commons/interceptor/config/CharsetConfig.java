@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.*;
 
 import java.nio.charset.Charset;
 import java.util.List;
@@ -46,7 +47,7 @@ public class CharsetConfig extends WebMvcConfigurationSupport {
     protected void addInterceptors(InterceptorRegistry registry) {
         //放行注册路径和登录路径
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns( "/", "/login/index","/js/**","/css/**","/kindeditor/**","/register/index","/register","/login/auth","/static/**");
+                .excludePathPatterns( "/", "/login/index","/js/**","/css/**","/kindeditor/**","/register/index","/register","/login/auth","/static/**","/login/sys/user/check");
         //  registry.addInterceptor(new LoginHandlerInterceptor()).excludePathPatterns("/");
 //        registry.addInterceptor(new LoginHandlerInterceptor()).excludePathPatterns();
         super.addInterceptors(registry);

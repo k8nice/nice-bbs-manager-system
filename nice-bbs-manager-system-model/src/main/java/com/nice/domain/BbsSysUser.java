@@ -28,6 +28,11 @@ public class BbsSysUser implements Serializable {
     private String bbsSysUserName;
 
     /**
+     * bbs系统用户密码
+     */
+    private String bbsSysUserPassword;
+
+    /**
      * bbs系统用户真实姓名
      */
     private String bbsSysUserRealName;
