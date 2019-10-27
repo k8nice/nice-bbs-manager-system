@@ -13,6 +13,6 @@ public interface BbsInvitationTypeManageService {
      * @param bbsInvitationType bbs帖子类型
      * @return true or false
      */
-    Boolean createBbsInvitationType(BbsInvitationType bbsInvitationType,Long bbsSysUserId);
+    Boolean createBbsInvitationType(BbsInvitationType bbsInvitationType);
 
 }

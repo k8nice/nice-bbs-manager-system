@@ -1,6 +1,7 @@
 package com.nice.controller;
 
 import com.nice.domain.BbsSysUser;
+import com.nice.mapper.BbsSysUserMapper;
 import com.nice.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +17,17 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/login")
 public class LoginController {
 
+    /**
+     * 注入loginService服务
+     */
     @Autowired
     private LoginService loginService;
+
+    /**
+     * 注入bbsSysUserMapper实例
+     */
+    @Autowired
+    private BbsSysUserMapper bbsSysUserMapper;
 
     /**
      * 登录页面
@@ -38,6 +48,7 @@ public class LoginController {
         if (loginService.loginUser(bbsUserName,bbsUserPassword)){
             BbsSysUser bbsSysUser = new BbsSysUser();
             bbsSysUser.setBbsSysUserName(bbsUserName);
+            bbsSysUser.setBbsSysUserId(bbsSysUserMapper.queryBbsSysUserIdByBbsSysUserName(bbsUserName));
             //把已登录的用户信息添加到session
             request.getSession().setAttribute("USER",bbsSysUser);
             return "redirect:/main";

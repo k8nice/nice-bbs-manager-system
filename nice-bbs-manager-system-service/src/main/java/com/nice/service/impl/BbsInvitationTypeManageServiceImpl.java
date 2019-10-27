@@ -27,14 +27,14 @@ public class BbsInvitationTypeManageServiceImpl implements BbsInvitationTypeMana
      * @return  true or false
      */
     @Override
-    public Boolean createBbsInvitationType(BbsInvitationType bbsInvitationType,Long bbsSysUserId) {
+    public Boolean createBbsInvitationType(BbsInvitationType bbsInvitationType) {
         if (checkBbsInvitationTypeIsExist(bbsInvitationType.getBbsInvitationTypeName())){
-
             throw new RuntimeException("帖子类型已存在");
         }
         bbsInvitationType.setBbsInvitationTypeCreateDate(new Date());
         bbsInvitationType.setBbsInvitationTypeModifyDate(new Date());
-        return false;
+        bbsInvitationTypeMapper.insertBbsInvitationType(bbsInvitationType);
+        return true;
     }
 
     /**

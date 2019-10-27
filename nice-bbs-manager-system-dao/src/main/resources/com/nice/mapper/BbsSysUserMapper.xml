@@ -22,6 +22,6 @@
 
     <!-- 根据bbs系统用户名查询bbs系统用户id -->
     <select id="queryBbsSysUserIdByBbsSysUserName" resultType="java.lang.Long">
-
+        select bbs_sys_user_id from bbs_sys_user where bbs_sys_user_name = #{bbsSysUserName}
     </select>
 </mapper>

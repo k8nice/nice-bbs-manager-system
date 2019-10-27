@@ -41,26 +41,34 @@
     </style>
     <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 </head>
-<body>
-    <button class="btn btn-primary">新建帖子类型</button>
-    <button class="btn btn-success">修改帖子类型</button>
-    <button class="btn btn-danger">删除帖子类型</button><br/><br/>
-    <table class="table table-condensed">
-        <tr class="active">
-            <td class="active table-info invitation-type-id">帖子类型id</td>
-            <td class="active table-info invitation-type-name">帖子类型名称</td>
-            <td class="active table-info invitation-type-create-date">帖子类型创建时间</td>
-            <td class="active table-info invitation-type-modify-date">帖子类型更新时间</td>
-            <td class="active table-info invitation-type-create-user">创建人</td>
-            <td class="active table-info invitation-type-create-remark">备注信息</td>
-        </tr>
-    </table>
+<body id="main-page">
+    <div id="invitation-type-manage-box">
+        <button class="btn btn-primary">新建帖子类型</button>
+        <button class="btn btn-success">修改帖子类型</button>
+        <button class="btn btn-danger">删除帖子类型</button><br/><br/>
+        <table class="table table-condensed">
+            <tr class="active">
+                <td class="active table-info invitation-type-id">帖子类型id</td>
+                <td class="active table-info invitation-type-name">帖子类型名称</td>
+                <td class="active table-info invitation-type-create-date">帖子类型创建时间</td>
+                <td class="active table-info invitation-type-modify-date">帖子类型更新时间</td>
+                <td class="active table-info invitation-type-create-user">创建人</td>
+                <td class="active table-info invitation-type-create-remark">备注信息</td>
+            </tr>
+        </table>
+    </div>
     <script src="/static/js/jquery-3.4.1.min.js" type="text/javascript" rel="script"></script>
     <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" rel="script"></script>
     <script type="text/javascript" rel="script">
+        var create_invitation_type_url ="/static/html/create_invitation_type.html"
         //点击新建帖子类型
         $('.btn-primary').click(function () {
-
+            $('#main-page').html()
+            // alert(1)
+            $.get(create_invitation_type_url,function (data) {
+                //替换拼接页面
+                $('#invitation-type-manage-box').html(data)
+            })
         })
     </script>
 </body>

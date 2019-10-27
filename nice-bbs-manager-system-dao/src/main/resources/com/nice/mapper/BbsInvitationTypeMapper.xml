@@ -12,8 +12,25 @@
         <result property="bbsInvitationTypeRemark" column="bbs_invitation_type_remark" />
         <result property="bbsUserId" column="bbs_user_id" />
     </resultMap>
-    <insert id="insertBbsInvitationType">
 
+    <sql id="bbsInvitationTypeColumn">
+        bbs_invitation_type_id,bbs_invitation_type_name,bbs_invitation_type_create_date,
+        bbs_invitation_type_modify_date,bbs_invitation_type_remark,bbs_user_id
+    </sql>
+
+    <sql id="bbsInvitationTypeColumnProperty">
+        #{bbsInvitationTypeId},#{bbsInvitationTypeName},#{bbsInvitationTypeCreateDate},
+        #{bbsInvitationTypeModifyDate},#{bbsInvitationTypeRemark},#{bbsUserId}
+    </sql>
+
+
+
+    <insert id="insertBbsInvitationType" parameterType="com.nice.domain.BbsInvitationType" >
+        insert into bbs_invitation_type(
+            <include refid="bbsInvitationTypeColumn" />
+        ) values (
+            <include refid="bbsInvitationTypeColumnProperty" />
+        );
     </insert>
 
     <!-- 根据bbs帖子类型名称查找bbs帖子类型名称 -->

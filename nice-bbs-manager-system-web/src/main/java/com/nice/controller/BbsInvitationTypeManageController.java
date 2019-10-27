@@ -5,10 +5,7 @@ import com.nice.domain.BbsSysUser;
 import com.nice.service.BbsInvitationTypeManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -32,10 +29,17 @@ public class BbsInvitationTypeManageController {
      * @param request   请求
      * @return
      */
-    @PostMapping("/create/{bbsInvitationType}")
-    public String createBbsInvitationType(@PathVariable BbsInvitationType bbsInvitationType, HttpServletRequest request){
+    @PostMapping("/create")
+    public String createBbsInvitationType(BbsInvitationType bbsInvitationType, HttpServletRequest request){
+//        System.out.println(1);
         BbsSysUser bbsSysUser = (BbsSysUser) request.getSession().getAttribute("USER");
-        return null;
+        bbsInvitationType.setBbsUserId(bbsSysUser.getBbsSysUserId());
+        if (bbsInvitationTypeManageService.createBbsInvitationType(bbsInvitationType)){
+            return "redirect:/main";
+        }
+        else {
+            return "redirect:./";
+        }
     }
 
 

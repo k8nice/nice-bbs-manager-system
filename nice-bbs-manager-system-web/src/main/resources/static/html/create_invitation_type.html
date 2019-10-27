@@ -40,24 +40,25 @@
             text-decoration: none;
             color: blue;
         }
+        .form-control{
+            width: 300px;
+        }
+        .btn-block{
+            width: 300px;
+        }
     </style>
     <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 </head>
 <body>
 <div class="container">
 
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <form class="form-signin" action="/bbs/invitation/type/create" method="post">
+        <h2 class="form-signin-heading">新建帖子类型</h2>
+        <label for="invidateTypeName" class="sr-only">帖子类型名称</label>
+        <input type="text" id="invidateTypeName" name="bbsInvitationTypeName" class="form-control" placeholder="帖子类型名称" required autofocus>
+        <label for="invidateTypeRemark" class="sr-only">invidateTypeRemark</label>
+        <input type="password" id="invidateTypeRemark" name="bbsInvitationTypeRemark" class="form-control" placeholder="备注" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">确认添加</button>
     </form>
 </div> <!-- /container -->
 <script src="/static/js/jquery-3.4.1.min.js" type="text/javascript" rel="script"></script>
