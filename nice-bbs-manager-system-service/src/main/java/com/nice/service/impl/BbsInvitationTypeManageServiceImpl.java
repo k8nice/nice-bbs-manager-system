@@ -6,6 +6,8 @@ import com.nice.service.BbsInvitationTypeManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * bbs帖子类型管理服务接口实现类
  * @author ningh
@@ -25,11 +27,13 @@ public class BbsInvitationTypeManageServiceImpl implements BbsInvitationTypeMana
      * @return  true or false
      */
     @Override
-    public Boolean createBbsInvitationType(BbsInvitationType bbsInvitationType) {
+    public Boolean createBbsInvitationType(BbsInvitationType bbsInvitationType,Long bbsSysUserId) {
         if (checkBbsInvitationTypeIsExist(bbsInvitationType.getBbsInvitationTypeName())){
 
             throw new RuntimeException("帖子类型已存在");
         }
+        bbsInvitationType.setBbsInvitationTypeCreateDate(new Date());
+        bbsInvitationType.setBbsInvitationTypeModifyDate(new Date());
         return false;
     }
 

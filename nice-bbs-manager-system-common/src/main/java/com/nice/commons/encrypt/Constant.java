@@ -3,6 +3,7 @@ package com.nice.commons.encrypt;
 import java.util.UUID;
 
 /**
+ * @author ningh
  * jwt相关类
  */
 public class Constant {

@@ -31,7 +31,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request 请求
      * @param e 异常对象
      * @param response 响应
-     * @return
+     * @return ErrorResponseEntiry 错误响应实体类
      */
     @ExceptionHandler(CustomException.class)
     public ErrorResponseEntiry customExceptionHandler(HttpServletRequest request, final Exception e, HttpServletResponse response){
@@ -45,7 +45,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request 请求
      * @param e 异常对象
      * @param response  响应
-     * @return
+     * @return ErrorResponseEntiry 错误响应实体类
      */
     @ExceptionHandler(RuntimeException.class)
     public ErrorResponseEntiry runtimeExceptionHandler(HttpServletRequest request, final Exception e, HttpServletResponse response){

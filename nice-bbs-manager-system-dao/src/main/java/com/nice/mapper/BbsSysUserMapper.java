@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**
+ * bbs系统用户的mapper类
  * @author ningh
  */
 @Mapper

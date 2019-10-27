@@ -14,8 +14,14 @@
         <result column="bbs_sys_user_modify_date" property="bbsSysUserModifyDate" />
         <result column="salt" property="salt" />
     </resultMap>
+
     <!-- 通过用户名获取密码和盐值 -->
     <select id="queryBbsSysUserPasswordAndSaltByBbsSysUserName" resultType="com.nice.domain.BbsSysUser" resultMap="bbsSysUser">
         select bbs_sys_user_password , salt  from bbs_sys_user where bbs_sys_user_name = #{bbsSysUserName};
+    </select>
+
+    <!-- 根据bbs系统用户名查询bbs系统用户id -->
+    <select id="queryBbsSysUserIdByBbsSysUserName" resultType="java.lang.Long">
+
     </select>
 </mapper>

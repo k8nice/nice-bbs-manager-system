@@ -26,6 +26,10 @@ public class WebConfig extends WebMvcConfigurationSupport {
         return converter;
     }
 
+    /**
+     * 加载拦截处理
+     * @return loginHandlerInterceptor 登录处理拦截
+     */
     @Bean
     public LoginHandlerInterceptor loadHandlerInterceptor(){
         return new LoginHandlerInterceptor();
@@ -59,6 +63,10 @@ public class WebConfig extends WebMvcConfigurationSupport {
 //        registry.addViewController("/").
     }
 
+    /**
+     * 添加资源处理
+     * @param registry  资源注册处理
+     */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //放行静态资源路径

@@ -21,7 +21,7 @@ public class LoginController {
 
     /**
      * 登录页面
-     * @return
+     * @return  html/login 登录页面路径
      */
     @GetMapping("/index")
     public String loginIndex(){
@@ -30,7 +30,7 @@ public class LoginController {
 
     /**
      * 判断用户名密码是否正确
-     * @return
+     * @return  转发到主页面
      */
     @PostMapping("/sys/user/check")
 //    @ResponseBody
@@ -40,7 +40,7 @@ public class LoginController {
             bbsSysUser.setBbsSysUserName(bbsUserName);
             //把已登录的用户信息添加到session
             request.getSession().setAttribute("USER",bbsSysUser);
-            return "redirect:../../../main";
+            return "redirect:/main";
         }
         return "html/login";
 //        return null;

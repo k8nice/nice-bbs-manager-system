@@ -3,6 +3,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nice.mapper.BbsInvitationTypeMapper">
 
+    <!-- 返回结果集 -->
+    <resultMap id="bbsInvitationType" type="com.nice.domain.BbsInvitationType">
+        <id property="bbsInvitationTypeId" column="bbs_invitation_type_id"/>
+        <result property="bbsInvitationTypeName" column="bbs_invitation_type_name" />
+        <result property="bbsInvitationTypeCreateDate" column="bbs_invitation_type_create_date" />
+        <result property="bbsInvitationTypeModifyDate" column="bbs_invitation_type_modify_date" />
+        <result property="bbsInvitationTypeRemark" column="bbs_invitation_type_remark" />
+        <result property="bbsUserId" column="bbs_user_id" />
+    </resultMap>
+    <insert id="insertBbsInvitationType">
+
+    </insert>
+
+    <!-- 根据bbs帖子类型名称查找bbs帖子类型名称 -->
     <select id="queryBbsInvitationTypeNameByBbsInvitationTypeName" resultType="java.lang.String">
         select bbs_invitation_type_name from bbs_invitation_type where bbs_invitation_type_name=#{bbsInvitationTypeName}
     </select>
