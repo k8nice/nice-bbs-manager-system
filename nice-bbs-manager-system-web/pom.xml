@@ -34,19 +34,27 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- thymeleaf依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <!-- web starter依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <!-- service层依赖 -->
         <dependency>
             <groupId>com.nice</groupId>
             <artifactId>nice-bbs-manager-system-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+            <exclusions>
+<!--                <exclusion>-->
+<!--                    <groupId>com.nice</groupId>-->
+<!--                    <artifactId>nice-bbs-system-common</artifactId>-->
+<!--                </exclusion>-->
+            </exclusions>
         </dependency>
 
 

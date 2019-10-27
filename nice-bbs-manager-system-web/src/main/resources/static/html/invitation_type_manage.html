@@ -1,0 +1,64 @@
+<!-- 后台用户管理页面 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台用户管理</title>
+    <style type="text/css" rel="stylesheet" >
+        body{
+            margin-top: 0;
+            margin-left: 0;
+            background-color: chartreuse;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+        .table-info{
+            border: 1px solid;
+        }
+        .invitation-type-id{
+            width: 100px;
+        }
+        .invitation-type-name{
+            width: 200px;
+        }
+        .invitation-type-create-date{
+            width: 250px;
+        }
+        .invitation-type-modify-date{
+            width: 250px;
+        }
+        .invitation-type-create-user{
+            width: 150px;
+        }
+        .invitation-type-create-remark{
+            width: 200px;
+        }
+    </style>
+    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <button class="btn btn-primary">新建帖子类型</button>
+    <button class="btn btn-success">修改帖子类型</button>
+    <button class="btn btn-danger">删除帖子类型</button><br/><br/>
+    <table class="table table-condensed">
+        <tr class="active">
+            <td class="active table-info invitation-type-id">帖子类型id</td>
+            <td class="active table-info invitation-type-name">帖子类型名称</td>
+            <td class="active table-info invitation-type-create-date">帖子类型创建时间</td>
+            <td class="active table-info invitation-type-modify-date">帖子类型更新时间</td>
+            <td class="active table-info invitation-type-create-user">创建人</td>
+            <td class="active table-info invitation-type-create-remark">备注信息</td>
+        </tr>
+    </table>
+    <script src="/static/js/jquery-3.4.1.min.js" type="text/javascript" rel="script"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" rel="script"></script>
+    <script type="text/javascript" rel="script">
+
+    </script>
+</body>
+</html>

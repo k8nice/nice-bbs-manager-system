@@ -40,7 +40,7 @@ public class LoginController {
             bbsSysUser.setBbsSysUserName(bbsUserName);
             //把已登录的用户信息添加到session
             request.getSession().setAttribute("USER",bbsSysUser);
-            return "html/main";
+            return "redirect:../../../main";
         }
         return "html/login";
 //        return null;

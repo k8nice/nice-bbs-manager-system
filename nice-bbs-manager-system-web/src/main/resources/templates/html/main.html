@@ -5,15 +5,44 @@
 <head>
     <meta charset="UTF-8">
     <title>主页面</title>
+    <link href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" >
     <style type="text/css" rel="stylesheet" >
         body{
+            margin-top: 0;
+            margin-left: 0;
             background-color: chartreuse;
-        }
-        #bbs-system-main-title{
-            color: aqua;
+            z-index: 0;
         }
         li{
             list-style: none;
+        }
+        #bbs-system-main-title{
+            position: fixed;
+            color: aqua;
+            z-index: 0;
+        }
+        .main-menu{
+            position: fixed;
+            font-size: 20px;
+            z-index: 0;
+            margin-top: 100px;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+        .user-information{
+            position: fixed;
+            margin-left: 1000px;
+            /*margin-top: 20px;*/
+            width: 400px;
+            z-index: 0;
+        }
+        .main-content{
+            position: absolute;
+            margin-top: 50px;
+            margin-left: 330px;
+            z-index: 1;
         }
     </style>
 </head>
@@ -22,11 +51,40 @@
     <div id="bbs-system-main-title">
         <h1><i>nice后台管理系统</i></h1>
     </div>
-    <!-- 主菜单 -->
-    <div>
+    <!-- 已登录用户信息 -->
+    <div class="user-information">
         <ul>
-            <li>用户管理</li><br>
+            <li>已登录</li>
         </ul>
     </div>
+    <!-- 主菜单 -->
+    <div>
+        <ul class="main-menu">
+            <li><a href="#">后台用户管理</a></li><br>
+            <li><a href="#" id="invitation-type-manage">类别管理</a></li><br>
+            <li><a href="#">帖子管理</a></li><br>
+            <li><a href="#">权限管理</a></li>
+        </ul>
+    </div>
+    <!-- 拼接页面的主要内容 -->
+    <div class="main-content"></div>
+    <script type="text/javascript" rel="script" src="../static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" rel="script" src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" rel="script">
+        //后台用户管理拼接页面路径
+        var sys_user_manage_url = "/static/html/sys_user_manage.html";
+        var invitation_type_manage_url = "/static/html/invitation_type_manage.html";
+        //默认拼接页面
+        $.get(sys_user_manage_url,function (data) {
+            $(".main-content").html(data)
+        })
+        //点击类别管理之后
+        $('#invitation-type-manage').click(function () {
+            $.get(invitation_type_manage_url,function (data) {
+                //替换拼接页面
+                $(".main-content").html(data)
+            })
+        })
+    </script>
 </body>
 </html>
